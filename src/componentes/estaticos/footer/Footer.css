@@ -1,0 +1,24 @@
+:root {
+  /*colors*/
+  --first-color: hsl(231, 48%, 48%);
+  --secundy-color: hsl(232, 54%, 41%);
+}
+
+.box1 {
+  background-color: var(--first-color);
+  height: 120px;
+}
+
+.box2 {
+  background-color: var(--secundy-color);
+  height: 60px;
+}
+
+.redes {
+  font-size: 50px;
+  color: white;
+}
+
+.textos {
+  color: white;
+}
