@@ -1,8 +1,54 @@
+* {
+  margin: 0;
+}
+
+:root {
+  /*colors*/
+  --first--color: hsl(207, 10%, 49%);
+
+  --text: hsl(0, 0%, 100%);
+}
+
+.text-decorator-none {
+  text-decoration: none;
+  color: white;
+}
+
 .cursor {
   cursor: pointer;
   color: white;
 }
 
-.text-decorator-none {
-  text-decoration: none;
+.appBar {
+  background-color: var(--first--color) !important;
+  padding: 0.25rem;
+}
+
+.options {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  z-index: 4;
+}
+
+@media (min-width: 900px) {
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .options {
+    opacity: 1;
+    visibility: visible;
+    z-index: 0;
+  }
+
+  .icon-menu {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 3;
+  }
 }
