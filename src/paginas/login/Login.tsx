@@ -36,9 +36,9 @@ function Login() {
     try {
       await login(`/usuarios/logar`, userLogin, setToken)
 
-      alert('Usuaário logado com sucesso!')
+      alert('Usuário logado com sucesso!')
     } catch (error) {
-      alert('Dados do usuario errados')
+      alert('Dados do usuário errados')
     }
   }
 
@@ -91,7 +91,7 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Link to="/cadastrousuario">
+            <Link to="/cadastrar">
               <Typography
                 variant="subtitle1"
                 gutterBottom

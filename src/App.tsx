@@ -21,11 +21,11 @@ function App() {
       <div style={{ minHeight: '100vh' }}>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/logar" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
-          <Route path="/temas" element={<ListaTema />} />
-          <Route path="/posts" element={<ListaPostagem />} />
+          <Route path="/cadastrar" element={<CadastroUsuario />} />
+          <Route path="/tema" element={<ListaTema />} />
+          <Route path="/postagens" element={<ListaPostagem />} />
           <Route path="/formularioPostagem" element={<CadastroPost />} />
           <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
           <Route path="/formularioTema" element={<CadastroTema />} />

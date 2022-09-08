@@ -21,12 +21,12 @@ function ListaTema() {
   useEffect(() => {
     if (token === '') {
       alert('Você precisa estar logado')
-      navigate('/login')
+      navigate('/logar')
     }
   }, [token])
 
   async function getTemas() {
-    await busca('/temas', setTemas, {
+    await busca('/tema', setTemas, {
       headers: {
         Authorization: token
       }

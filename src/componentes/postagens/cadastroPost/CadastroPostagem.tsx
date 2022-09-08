@@ -26,7 +26,7 @@ function CadastroPost() {
   useEffect(() => {
     if (token == '') {
       alert('Você precisa estar logado')
-      navigate('/login')
+      navigate('/logar')
     }
   }, [token])
 
@@ -62,7 +62,7 @@ function CadastroPost() {
   }, [id])
 
   async function getTemas() {
-    await busca('/temas', setTemas, {
+    await busca('/tema', setTemas, {
       headers: {
         Authorization: token
       }
@@ -107,7 +107,7 @@ function CadastroPost() {
   }
 
   function back() {
-    navigate('/posts')
+    navigate('/postagens')
   }
 
   return (

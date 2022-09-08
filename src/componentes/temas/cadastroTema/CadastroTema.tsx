@@ -17,7 +17,7 @@ function CadastroTema() {
   useEffect(() => {
     if (token == '') {
       alert('Você precisa estar logado')
-      navigate('/login')
+      navigate('/logar')
     }
   }, [token])
 
@@ -28,7 +28,7 @@ function CadastroTema() {
   }, [id])
 
   async function findById(id: string) {
-    buscaId(`/temas/${id}`, setTema, {
+    buscaId(`/tema/${id}`, setTema, {
       headers: {
         Authorization: token
       }
@@ -48,14 +48,14 @@ function CadastroTema() {
 
     if (id !== undefined) {
       console.log(tema)
-      put(`/temas`, tema, setTema, {
+      put(`/tema`, tema, setTema, {
         headers: {
           Authorization: token
         }
       })
       alert('Tema atualizado com sucesso')
     } else {
-      post(`/temas`, tema, setTema, {
+      post(`/tema`, tema, setTema, {
         headers: {
           Authorization: token
         }
@@ -66,7 +66,7 @@ function CadastroTema() {
   }
 
   function back() {
-    navigate('/temas')
+    navigate('/tema')
   }
 
   return (

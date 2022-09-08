@@ -13,7 +13,7 @@ function Navbar() {
   function goLogout() {
     setToken('')
     alert('Usuário deslogado')
-    navigate('/login')
+    navigate('/logar')
   }
 
   return (
@@ -33,7 +33,7 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            <Link to={'/posts'} className="text-decorator-none">
+            <Link to={'/postagens'} className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   postagens
