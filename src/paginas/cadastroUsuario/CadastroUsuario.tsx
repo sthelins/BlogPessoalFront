@@ -16,6 +16,7 @@ function CadastroUsuario() {
     id: 0,
     nome: '',
     usuario: '',
+    /* foto: null,*/
     senha: ''
   })
 
@@ -23,6 +24,7 @@ function CadastroUsuario() {
     id: 0,
     nome: '',
     usuario: '',
+    /*foto: null,*/
     senha: ''
   })
 
@@ -47,6 +49,7 @@ function CadastroUsuario() {
     e.preventDefault()
     if (confirmarSenha === user.senha) {
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+      console.log(JSON.stringify(userResult))
       alert('Usuario cadastrado com sucesso')
     } else {
       alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
@@ -83,7 +86,7 @@ function CadastroUsuario() {
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="usuario"
+              label="usuário"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -96,8 +99,8 @@ function CadastroUsuario() {
               label="senha"
               variant="outlined"
               name="senha"
+              type={'password'}
               margin="normal"
-              type="password"
               fullWidth
             />
             <TextField
@@ -106,11 +109,11 @@ function CadastroUsuario() {
                 confirmarSenhaHandle(e)
               }
               id="confirmarSenha"
-              label="confirmarSenha"
+              label="confirmar senha"
               variant="outlined"
               name="confirmarSenha"
+              type={'password'}
               margin="normal"
-              type="password"
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
