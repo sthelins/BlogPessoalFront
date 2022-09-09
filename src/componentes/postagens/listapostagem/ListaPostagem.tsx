@@ -14,7 +14,7 @@ import useLocalStorage from 'react-use-localstorage'
 import { busca } from '../../../services/Service'
 
 function ListaPostagem() {
-  const [posts, setPosts] = useState<Postagem[]>([])
+  const [postagens, setPostagens] = useState<Postagem[]>([])
   const [token, setToken] = useLocalStorage('token')
   let navigate = useNavigate()
 
@@ -25,8 +25,8 @@ function ListaPostagem() {
     }
   }, [token])
 
-  async function getPost() {
-    await busca('/postagens', setPosts, {
+  async function getPostagens() {
+    await busca('/postagens', setPostagens, {
       headers: {
         Authorization: token
       }
@@ -34,12 +34,12 @@ function ListaPostagem() {
   }
 
   useEffect(() => {
-    getPost()
-  }, [posts.length])
+    getPostagens()
+  }, [postagens.length])
 
   return (
     <>
-      {posts.map(post => (
+      {postagens.map(postagens => (
         <Box m={2}>
           <Card variant="outlined">
             <CardContent>
@@ -47,19 +47,20 @@ function ListaPostagem() {
                 Postagens
               </Typography>
               <Typography variant="h5" component="h2">
-                {post.titulo}
+                {postagens.titulo}
               </Typography>
               <Typography variant="body2" component="p">
-                {post.texto}
+                {postagens.texto}
               </Typography>
               <Typography variant="body2" component="p">
-                {post.tema?.descricao}
+                {postagens.tema?.descricao}
               </Typography>
             </CardContent>
+
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
                 <Link
-                  to={`/formularioPostagem/${post.id}`}
+                  to={`/formularioPostagem/${postagens.id}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
@@ -74,7 +75,7 @@ function ListaPostagem() {
                   </Box>
                 </Link>
                 <Link
-                  to={`/deletarPostagem/${post.id}`}
+                  to={`/deletarPostagem/${postagens.id}`}
                   className="text-decorator-none"
                 >
                   <Box mx={1}>

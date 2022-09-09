@@ -14,7 +14,7 @@ import useLocalStorage from 'react-use-localstorage'
 import Tema from '../../../models/Tema'
 
 function ListaTema() {
-  const [temas, setTemas] = useState<Tema[]>([])
+  const [tema, setTema] = useState<Tema[]>([])
   const [token, setToken] = useLocalStorage('token')
   let navigate = useNavigate()
 
@@ -25,8 +25,8 @@ function ListaTema() {
     }
   }, [token])
 
-  async function getTemas() {
-    await busca('/tema', setTemas, {
+  async function getTema() {
+    await busca('/tema', setTema, {
       headers: {
         Authorization: token
       }
@@ -34,12 +34,12 @@ function ListaTema() {
   }
 
   useEffect(() => {
-    getTemas()
-  }, [temas.length])
+    getTema()
+  }, [tema.length])
 
   return (
     <>
-      {temas.map(tema => (
+      {tema.map(tema => (
         <Box m={2} key={tema.id}>
           <Card variant="outlined">
             <CardContent>

@@ -10,17 +10,19 @@ import {
   FormControl,
   FormHelperText
 } from '@material-ui/core'
-import './CadastroPost.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import Tema from '../../../models/Tema'
 import useLocalStorage from 'react-use-localstorage'
 import Postagem from '../../../models/Postagem'
 import { busca, buscaId, post, put } from '../../../services/Service'
+import './CadastroPostagem.css'
 
-function CadastroPost() {
+function CadastroPostagem() {
   let navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
-  const [temas, setTemas] = useState<Tema[]>([])
+  const [temas, setTemas] = useState<Tema[]>(
+    []
+  ) /*usado para colocar os temas ja cadastrados*/
   const [token, setToken] = useLocalStorage('token')
 
   useEffect(() => {
@@ -31,11 +33,11 @@ function CadastroPost() {
   }, [token])
 
   const [tema, setTema] = useState<Tema>({
-    id: 0,
+    /* armazernar um tema especifico*/ id: 0,
     descricao: ''
   })
   const [postagem, setPostagem] = useState<Postagem>({
-    id: 0,
+    /*efetuar o cadastro das postagens*/ id: 0,
     titulo: '',
     texto: '',
     tema: null,
@@ -168,4 +170,4 @@ function CadastroPost() {
     </Container>
   )
 }
-export default CadastroPost
+export default CadastroPostagem

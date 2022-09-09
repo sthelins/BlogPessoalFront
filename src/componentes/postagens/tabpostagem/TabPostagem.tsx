@@ -53,7 +53,10 @@ function TabPostagem() {
             dolor sit amet consectetur adipisicing elit. Inventore adipisci,
             officia aut quidem dolorum deserunt iure dolorem doloribus velit
             nobis quas consequatur at ullam odit, nesciunt est nulla nihil
-            excepturi!
+            excepturi! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Asperiores sequi corporis illo maxime, maiores neque qui soluta
+            aspernatur earum voluptatem eius? Neque nihil tempora saepe deleniti
+            dolore voluptatibus nam iure?
           </Typography>
         </TabPanel>
       </TabContext>
