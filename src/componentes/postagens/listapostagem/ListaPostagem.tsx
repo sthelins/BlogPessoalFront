@@ -10,13 +10,17 @@ import {
 import { Box } from '@mui/material'
 import './ListaPostagem.css'
 import Postagem from '../../../models/Postagem'
-import useLocalStorage from 'react-use-localstorage'
 import { busca } from '../../../services/Service'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokenReducer'
 
 function ListaPostagem() {
   const [postagens, setPostagens] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token')
   let navigate = useNavigate()
+
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    state => state.tokens
+  )
 
   useEffect(() => {
     if (token == '') {
@@ -92,4 +96,5 @@ function ListaPostagem() {
     </>
   )
 }
+
 export default ListaPostagem

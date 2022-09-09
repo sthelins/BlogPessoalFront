@@ -6,10 +6,14 @@ import useLocalStorage from 'react-use-localstorage'
 import { login } from '../../services/Service'
 import UserLogin from '../../models/UserLogin'
 import './Login.css'
+import { useDispatch } from 'react-redux'
+import { addToken } from '../../store/tokens/actions'
 
 function Login() {
   let navigate = useNavigate()
-  const [token, setToken] = useLocalStorage('token')
+  const dispatch = useDispatch()
+
+  const [token, setToken] = useState('') /*useLocalStore*/
 
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
@@ -20,13 +24,14 @@ function Login() {
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
-      ...userLogin, //spread operator ... -> "espalha" os atributos
+      ...userLogin,
       [e.target.name]: e.target.value
     })
   }
 
   useEffect(() => {
     if (token !== '') {
+      dispatch(addToken(token))
       navigate('/home')
     }
   }, [token])

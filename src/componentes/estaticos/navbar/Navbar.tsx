@@ -4,20 +4,29 @@ import { Link, useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu'
-import useLocalStorage from 'react-use-localstorage'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokenReducer'
+import { useDispatch } from 'react-redux'
+import { addToken } from '../../../store/tokens/actions'
 
 function Navbar() {
-  const [token, setToken] = useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    state => state.tokens
+  )
+
   let navigate = useNavigate()
+  const dispatch = useDispatch()
 
   function goLogout() {
-    setToken('')
+    dispatch(addToken(''))
     alert('Usuário deslogado')
     navigate('/logar')
   }
 
-  return (
-    <>
+  var navbarComponent
+
+  if (token !== '') {
+    navbarComponent = (
       <AppBar position="static">
         <Toolbar variant="dense">
           <Box className="cursor">
@@ -63,8 +72,10 @@ function Navbar() {
           </Box>
         </Toolbar>
       </AppBar>
-    </>
-  )
+    )
+  }
+
+  return <>{navbarComponent}</>
 }
 
 export default Navbar
