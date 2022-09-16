@@ -12,19 +12,21 @@ import {
 } from '@material-ui/core'
 import { useNavigate, useParams } from 'react-router-dom'
 import Tema from '../../../models/Tema'
-import useLocalStorage from 'react-use-localstorage'
 import Postagem from '../../../models/Postagem'
 import { busca, buscaId, post, put } from '../../../services/Service'
 import './CadastroPostagem.css'
 import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokenReducer'
 
 function CadastroPostagem() {
   let navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
-  const [temas, setTemas] = useState<Tema[]>(
-    []
-  ) /*usado para colocar os temas ja cadastrados*/
-  const [token, setToken] = useLocalStorage('token')
+  const [temas, setTemas] = useState<Tema[]>([])
+
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    state => state.tokens
+  )
 
   useEffect(() => {
     if (token == '') {
@@ -42,12 +44,14 @@ function CadastroPostagem() {
     }
   }, [token])
 
+  /* armazernar um tema especifico*/
   const [tema, setTema] = useState<Tema>({
-    /* armazernar um tema especifico*/ id: 0,
+    id: 0,
     descricao: ''
   })
+  /*efetuar o cadastro das postagens*/
   const [postagem, setPostagem] = useState<Postagem>({
-    /*efetuar o cadastro das postagens*/ id: 0,
+    id: 0,
     titulo: '',
     texto: '',
     tema: null,
@@ -100,39 +104,85 @@ function CadastroPostagem() {
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault()
 
+    // Se o ID for diferente de indefinido tente Atualizar
     if (id !== undefined) {
-      put(`/postagens`, postagem, setPostagem, {
-        headers: {
-          Authorization: token
-        }
-      })
-      toast.success('Postagem atualizada com sucesso', {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: 'colored',
-        progress: undefined
-      })
+      // TRY: Tenta executar a atualização
+      try {
+        await put(`/postagens`, postagem, setPostagem, {
+          headers: {
+            Authorization: token
+          }
+        })
+
+        toast.success('Postagem atualizada com sucesso', {
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          theme: 'colored',
+          progress: undefined
+        })
+
+        // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
+      } catch (error) {
+        console.log(`Error: ${error}`)
+        toast.warning(
+          'Erro, por favor verifique a quantidade minima de caracteres',
+          {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            theme: 'colored',
+            progress: undefined
+          }
+        )
+      }
+
+      // Se o ID for indefinido, tente Cadastrar
     } else {
-      post(`/postagens`, postagem, setPostagem, {
-        headers: {
-          Authorization: token
-        }
-      })
-      toast.success('Postagem cadastrada com sucesso', {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: 'colored',
-        progress: undefined
-      })
+      // TRY: Tenta executar o cadastro
+      try {
+        await post(`/postagens`, postagem, setPostagem, {
+          headers: {
+            Authorization: token
+          }
+        })
+
+        toast.success('Postagem cadastrada com sucesso', {
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          theme: 'colored',
+          progress: undefined
+        })
+
+        // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
+      } catch (error) {
+        console.log(`Error: ${error}`)
+        toast.warning(
+          'Erro, por favor verifique a quantidade minima de caracteres',
+          {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            theme: 'colored',
+            progress: undefined
+          }
+        )
+      }
     }
+
     back()
   }
 
@@ -178,7 +228,7 @@ function CadastroPostagem() {
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
             onChange={e =>
-              buscaId(`/temas/${e.target.value}`, setTema, {
+              buscaId(`/tema/${e.target.value}`, setTema, {
                 headers: {
                   Authorization: token
                 }

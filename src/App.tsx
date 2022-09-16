@@ -4,7 +4,7 @@ import './App.css'
 
 import Footer from './componentes/estaticos/footer/Footer'
 import Navbar from './componentes/estaticos/navbar/Navbar'
-import CadastroPost from './componentes/postagens/deletarPostagem/DeletarPostagem'
+import CadastroPost from './componentes/postagens/cadastroPost/CadastroPostagem'
 import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem'
 import ListaPostagem from './componentes/postagens/listapostagem/ListaPostagem'
 import CadastroTema from './componentes/temas/cadastroTema/CadastroTema'

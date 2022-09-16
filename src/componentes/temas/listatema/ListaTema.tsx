@@ -13,10 +13,15 @@ import { busca } from '../../../services/Service'
 import useLocalStorage from 'react-use-localstorage'
 import Tema from '../../../models/Tema'
 import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokenReducer'
 
 function ListaTema() {
-  const [tema, setTema] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token')
+  const [temas, setTemas] = useState<Tema[]>([])
+
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    state => state.tokens
+  )
   let navigate = useNavigate()
 
   useEffect(() => {
@@ -36,7 +41,7 @@ function ListaTema() {
   }, [token])
 
   async function getTema() {
-    await busca('/tema', setTema, {
+    await busca('/tema', setTemas, {
       headers: {
         Authorization: token
       }
@@ -45,11 +50,11 @@ function ListaTema() {
 
   useEffect(() => {
     getTema()
-  }, [tema.length])
+  }, [temas.length])
 
   return (
     <>
-      {tema.map(tema => (
+      {temas.map(tema => (
         <Box m={2} key={tema.id}>
           <Card variant="outlined">
             <CardContent>
