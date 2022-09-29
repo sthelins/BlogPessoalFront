@@ -1,6 +1,12 @@
+* {
+  text-decoration: none;
+}
+
 :root {
-  /*color*/
-  --first-color: hsl(231, 48%, 48%);
+  /*colors*/
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
 }
 
 .caixa {
@@ -16,6 +22,11 @@
   border-color: white !important;
   background-color: var(--first-color);
   color: white !important;
+}
+
+.botao:hover {
+  background-color: white !important;
+  color: black !important;
 }
 
 .postagens {

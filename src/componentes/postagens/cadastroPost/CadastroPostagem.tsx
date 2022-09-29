@@ -37,7 +37,7 @@ function CadastroPostagem() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
       navigate('/logar')
@@ -121,7 +121,7 @@ function CadastroPostagem() {
           closeOnClick: true,
           pauseOnHover: false,
           draggable: true,
-          theme: 'colored',
+          theme: 'dark',
           progress: undefined
         })
 
@@ -137,7 +137,7 @@ function CadastroPostagem() {
             closeOnClick: true,
             pauseOnHover: false,
             draggable: true,
-            theme: 'colored',
+            theme: 'dark',
             progress: undefined
           }
         )
@@ -160,7 +160,7 @@ function CadastroPostagem() {
           closeOnClick: true,
           pauseOnHover: false,
           draggable: true,
-          theme: 'colored',
+          theme: 'dark',
           progress: undefined
         })
 
@@ -176,7 +176,7 @@ function CadastroPostagem() {
             closeOnClick: true,
             pauseOnHover: false,
             draggable: true,
-            theme: 'colored',
+            theme: 'dark',
             progress: undefined
           }
         )
@@ -240,7 +240,7 @@ function CadastroPostagem() {
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="primary">
+          <Button type="submit" variant="contained" className="btnFinalizar">
             Finalizar
           </Button>
         </FormControl>

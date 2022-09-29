@@ -34,7 +34,7 @@ function DeletarTema() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
       navigate('/logar')
@@ -69,7 +69,7 @@ function DeletarTema() {
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
-      theme: 'colored',
+      theme: 'dark',
       progress: undefined
     })
   }
@@ -96,9 +96,8 @@ function DeletarTema() {
                 <Button
                   onClick={sim}
                   variant="contained"
-                  className="marginLeft"
+                  className="btnSim"
                   size="large"
-                  color="primary"
                 >
                   Sim
                 </Button>
@@ -108,7 +107,7 @@ function DeletarTema() {
                   onClick={nao}
                   variant="contained"
                   size="large"
-                  color="secondary"
+                  className="btnNao"
                 >
                   Não
                 </Button>

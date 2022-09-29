@@ -1,8 +1,25 @@
+:root {
+  /*colors*/
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
+
+  /*botões*/
+  --btnFinalizar: #659c57;
+  --btnFinalizar-hover: #54ac44;
+}
+
 .cursor {
   cursor: pointer;
 }
 
 .btnModal {
   border-color: white !important;
+  background-color: var(--first-color);
+  color: white !important;
+}
+
+.btnModal:hover {
   background-color: white !important;
+  color: black !important;
 }

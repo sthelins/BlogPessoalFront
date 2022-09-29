@@ -1,0 +1,20 @@
+:root {
+  /*colors*/
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
+
+  /*botões*/
+  --btnFinalizar: #659c57;
+  --btnFinalizar-hover: #54ac44;
+}
+
+.btnSim {
+  background-color: #54ac44 !important;
+  color: white !important;
+}
+
+.btnNao {
+  background-color: #5d5d5d !important;
+  color: white !important;
+}

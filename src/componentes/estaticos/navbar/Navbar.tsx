@@ -27,7 +27,7 @@ function Navbar() {
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
-      theme: 'colored',
+      theme: 'dark',
       progress: undefined
     })
     navigate('/logar')
@@ -37,7 +37,7 @@ function Navbar() {
 
   if (token !== '') {
     navbarComponent = (
-      <AppBar position="static">
+      <AppBar position="static" className="appBar">
         <Toolbar variant="dense">
           <Box className="cursor">
             <Typography variant="h5" color="inherit">

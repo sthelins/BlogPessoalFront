@@ -32,7 +32,7 @@ function ListaPostagem() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
       navigate('/logar')
@@ -58,7 +58,7 @@ function ListaPostagem() {
           <Card variant="outlined">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
-                Postagens
+                Postagem
               </Typography>
               <Typography variant="h5" component="h2">
                 {postagens.titulo}
@@ -80,9 +80,8 @@ function ListaPostagem() {
                   <Box mx={1}>
                     <Button
                       variant="contained"
-                      className="marginLeft"
                       size="small"
-                      color="primary"
+                      className="btnAtualizar"
                     >
                       atualizar
                     </Button>
@@ -93,7 +92,11 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
+                    <Button
+                      variant="contained"
+                      size="small"
+                      className="btnDeletar"
+                    >
                       deletar
                     </Button>
                   </Box>

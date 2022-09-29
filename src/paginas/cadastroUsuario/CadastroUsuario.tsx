@@ -58,7 +58,7 @@ function CadastroUsuario() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
     } else {
@@ -71,7 +71,7 @@ function CadastroUsuario() {
           closeOnClick: true,
           pauseOnHover: false,
           draggable: false,
-          theme: 'colored',
+          theme: 'dark',
           progress: undefined
         }
       )
@@ -140,15 +140,15 @@ function CadastroUsuario() {
             />
             <Box marginTop={2} textAlign="center">
               <Link to="/logar" className="text-decorator-none">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  className="btnCancelar"
-                >
+                <Button variant="contained" className="btnCancelar">
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" variant="contained" color="primary">
+              <Button
+                type="submit"
+                variant="contained"
+                className="btnCadastrar"
+              >
                 Cadastrar
               </Button>
             </Box>

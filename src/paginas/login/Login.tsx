@@ -49,7 +49,7 @@ function Login() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
     } catch (error) {
@@ -60,7 +60,7 @@ function Login() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
     }
@@ -104,7 +104,7 @@ function Login() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="submit" variant="contained" className="btnLogar">
                 Logar
               </Button>
             </Box>
@@ -120,7 +120,7 @@ function Login() {
                 variant="subtitle1"
                 gutterBottom
                 align="center"
-                className="textos1"
+                className="txtCadastrar"
               >
                 Cadastre-se
               </Typography>

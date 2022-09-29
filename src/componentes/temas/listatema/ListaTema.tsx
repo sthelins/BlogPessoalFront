@@ -33,7 +33,7 @@ function ListaTema() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
       navigate('/logar')
@@ -74,9 +74,8 @@ function ListaTema() {
                   <Box mx={1}>
                     <Button
                       variant="contained"
-                      className="marginLeft"
                       size="small"
-                      color="primary"
+                      className="btnAtualizar"
                     >
                       atualizar
                     </Button>
@@ -87,7 +86,11 @@ function ListaTema() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
+                    <Button
+                      variant="contained"
+                      size="small"
+                      className="btnDeletar"
+                    >
                       deletar
                     </Button>
                   </Box>

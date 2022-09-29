@@ -1,3 +1,10 @@
+:root {
+  /*colors*/
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
+}
+
 .textos1 {
   font-weight: bold !important;
 }
@@ -13,4 +20,14 @@
 
 .text-decorator-none {
   text-decoration: none;
+}
+
+.btnLogar {
+  background-color: var(--first-color) !important;
+  color: white !important;
+}
+
+.txtCadastrar {
+  color: var(--first-color) !important;
+  font-weight: bold !important;
 }

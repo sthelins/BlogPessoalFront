@@ -1,3 +1,24 @@
+:root {
+  /*colors*/
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
+
+  /*botões*/
+  --btnFinalizar: #659c57;
+  --btnFinalizar-hover: #54ac44;
+}
+
 .text-decorator-none {
   text-decoration: none;
+}
+
+.btnAtualizar {
+  background-color: var(--first-color) !important;
+  color: white !important;
+}
+
+.btnDeletar {
+  background-color: #5d5d5d !important;
+  color: white !important;
 }

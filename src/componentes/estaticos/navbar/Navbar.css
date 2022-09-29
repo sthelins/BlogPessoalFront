@@ -4,9 +4,13 @@
 
 :root {
   /*colors*/
-  --first--color: hsl(207, 10%, 49%);
+  --first--color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
 
-  --text: hsl(0, 0%, 100%);
+  /*botões*/
+  --btnFinalizar: #659c57;
+  --btnFinalizar-hover: #54ac44;
 }
 
 .text-decorator-none {

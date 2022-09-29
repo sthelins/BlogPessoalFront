@@ -1,3 +1,10 @@
+:root {
+  /*colors*/
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
+}
+
 .imagem2 {
   background-image: url(https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
   background-repeat: no-repeat;
@@ -12,5 +19,12 @@
 }
 
 .btnCancelar {
+  background-color: #5d5d5d !important;
+  color: white !important;
   margin-right: 20px !important;
+}
+
+.btnCadastrar {
+  background-color: #b94f6f !important;
+  color: white !important;
 }

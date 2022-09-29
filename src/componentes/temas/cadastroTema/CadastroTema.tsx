@@ -30,7 +30,7 @@ function CadastroTema() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
       navigate('/logar')
@@ -76,7 +76,7 @@ function CadastroTema() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
     } else {
@@ -92,7 +92,7 @@ function CadastroTema() {
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: 'colored',
+        theme: 'dark',
         progress: undefined
       })
     }
@@ -118,13 +118,13 @@ function CadastroTema() {
           value={tema.descricao}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
           id="descricao"
-          label="descricao"
+          label="Título"
           variant="outlined"
           name="descricao"
           margin="normal"
           fullWidth
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" className="btnFinalizar">
           Finalizar
         </Button>
       </form>

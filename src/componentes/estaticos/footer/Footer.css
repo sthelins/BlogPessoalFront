@@ -1,16 +1,21 @@
 :root {
   /*colors*/
-  --first-color: hsl(231, 48%, 48%);
-  --secundy-color: hsl(232, 54%, 41%);
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
+
+  /*botões*/
+  --btnFinalizar: #659c57;
+  --btnFinalizar-hover: #54ac44;
 }
 
 .box1 {
-  background-color: var(--first-color);
+  background-color: var(--secundy-color);
   height: 120px;
 }
 
 .box2 {
-  background-color: var(--secundy-color);
+  background-color: var(--first-color);
   height: 60px;
 }
 

@@ -1,3 +1,23 @@
+:root {
+  /*colors*/
+  --first-color: #b94f6f;
+  --secundy-color: #d981a2;
+  --third-color: #ffecf1;
+
+  /*botões*/
+  --btnFinalizar: #659c57;
+  --btnFinalizar-hover: #54ac44;
+}
+
 .topo {
   margin-top: 20px;
+}
+
+.btnFinalizar {
+  background-color: var(--btnFinalizar) !important;
+  color: white !important;
+}
+
+.btnFinalizar:hover {
+  background-color: var(--btnFinalizar-hover) !important;
 }
